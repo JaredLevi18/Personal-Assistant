@@ -2,7 +2,7 @@ import openai
 import pyttsx3
 import speech_recognition as sr
 
-openai.api_key = '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' #'YOUR_API_KEY'
+openai.api_key = 'YOUR_API_KEY'
 
 def chat_with_bot(message):
     response = openai.Completion.create(
