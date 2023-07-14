@@ -30,9 +30,27 @@ else: print("Female voice not found.")
 def speak(text):
     engine.say(text=text)
     engine.runAndWait()
+def listen():
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("Listening")
+        r.adjust_for_ambient_noise(source=source, duration=1)
+        audio = r.listen(source)
+    try:
+        print("Recognizing...")
+        command = r.recognize_google(audio)
+        print("You said: " + command)
+        return command.lower()
+    except sr.UnknownValueError:
+        print("Sorry, I coudn't understand. Please try againg")
+        return ""
+    except sr.RequestError:
+        print("Sorry, I'm unable to acces the speech recognition service")
+        return ""
 
+speak("Hello, I'm your assistant, How can I help you?.")
 while True:
-    command= input("User: ")
+    command= listen()
     response = chat_with_bot(command)
     print(response)
     speak(response)
