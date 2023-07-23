@@ -17,6 +17,3 @@ else: print("Female voice not found.")
 def speak(text):
     engine.say(text=text)
     engine.runAndWait()
-
-
-heloo  = 0000000000000001
