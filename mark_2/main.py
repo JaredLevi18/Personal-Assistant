@@ -22,3 +22,4 @@ while True:
     if command == "bye":
         speak("Goodbye sir.")
         break
+jfdd=2
