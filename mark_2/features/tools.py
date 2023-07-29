@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 from langchain.utilities import WikipediaAPIWrapper, PythonREPL
 import os
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "" # Your key
 
 # initializing the llm
 llm = ChatOpenAI(temperature=0.7)
