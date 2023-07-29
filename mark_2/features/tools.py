@@ -15,6 +15,7 @@ llm = ChatOpenAI(temperature=0.7)
 search = DuckDuckGoSearchRun()
 wikipedia = WikipediaAPIWrapper()
 python_repl = PythonREPL()
+youtube = YouTubeSearchTool()
 
 tools = [
     Tool.from_function(
@@ -33,6 +34,12 @@ tools = [
         func=python_repl.run,
         name='PythonREPL',
         description='Useful for when you need to use python to answer a question, You shoud input python code.'
+    ),
+
+    Tool.from_function(
+        func=youtube.run,
+        name='Youtube',
+        description='Useful for when you need to watch a youtube video'
     )
 ]
 
