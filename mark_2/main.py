@@ -1,25 +1,14 @@
 from features import speak, listen
-import openai
+from features import agent
 
-openai.api_key = # your API key
-
-def chat_with_bot(message):
-    response = openai.Completion.create(
-        engine = "text-davinci-003",
-        prompt= message,
-        max_tokens = 150,
-        temperature = 0.7,
-        n = 1,
-        stop = None,
-    )
-    return response.choices[0].text.strip()
+# print("write something")
+# command = input()
+# speak(agent.run(command))
 
 while True:
     command = listen()
-    response = chat_with_bot(command)
-    print(response)
-    speak(response)
-    if command == "bye":
+    if command == "goodbye":
         speak("Goodbye sir.")
         break
-jfdd=2
+    else:
+        speak(agent.run(command))
