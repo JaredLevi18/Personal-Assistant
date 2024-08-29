@@ -6,6 +6,7 @@ from langchain.tools import BaseTool, StructuredTool, Tool, tool
 from langchain.tools import DuckDuckGoSearchRun
 from pydantic import BaseModel, Field
 from langchain.utilities import WikipediaAPIWrapper, PythonREPL
+from langchain_community.tools import YouTubeSearchTool
 import os
 
 os.environ["OPENAI_API_KEY"] = "" # Your key
